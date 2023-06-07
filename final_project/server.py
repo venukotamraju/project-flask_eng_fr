@@ -8,15 +8,14 @@ app = Flask("Web Translator")
 def englishToFrench():
     textToTranslate = request.args.get('textToTranslate')
     french = translator.english_to_french(textToTranslate)
-    print(french)
-    return "Translated text to French"
+    return "Translated text to French: " + french
 
 @app.route("/frenchToEnglish")
 def frenchToEnglish():
     textToTranslate = request.args.get('textToTranslate')
     english = translator.french_to_english(textToTranslate)
-    print(english)
-    return "Translated text to English"
+    
+    return "Translated text to English: " + english
 
 @app.route("/")
 def renderIndexPage():
